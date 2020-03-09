@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+  <title>Document</title>
+</head>
+<style>
+.colunas {
+  height: 50px;
+}
+h1, h4 {
+  text-align: center;
+}
+.botao {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: rgb(103, 97, 143);
+}
+input{
+  
+  border-radius: 10px;
+}
+</style>
+
+<body>
+  
+  
+  <div class="container-fluid">
+    <div class="container">
+      <div class="jumbotron">        
+        <h1>DAY PLANNER</h1>
+        <h4></h4>
+        <h4 id="time"></h4>
+      </div>
+      <div class="row" id="nine">
+        <div class="col-md-2 border border-dark colunas" value = 9 >9 am</div>
+        <div class="col-md-8 border border-dark colunas eventos" value = 9></div>
+        <div class="col-md-2 border border-dark colunas botao">Add</div>
+      </div>
+      <div class="row" id="ten">
+        <div class="col-md-2 border border-dark colunas" value = "10" >10 am</div>
+        <div class="col-md-8 border border-dark colunas eventos" value = "10"></div>
+        <div class="col-md-2 border border-dark colunas botao">Add</div>
+      </div>
+      <div class="row" id="eleven">
+        <div class="col-md-2 border border-dark colunas" value = "11">11 am</div>
+        <div class="col-md-8 border border-dark colunas eventos" value = "11"></div>
+        <div class="col-md-2 border border-dark colunas botao">Add</div>
+      </div>
+      <div class="row" id="twelve">
+        <div class="col-md-2 border border-dark colunas" value = "12">12 pm</div>
+        <div class="col-md-8 border border-dark colunas eventos" value = "12"></div>
+        <div class="col-md-2 border border-dark colunas botao">Add</div>
+      </div>
+      <div class="row" id="one">
+        <div class="col-md-2 border border-dark colunas" value = "13">1 pm</div>
+        <div class="col-md-8 border border-dark colunas eventos" value = "13"></div>
+        <div class="col-md-2 border border-dark colunas botao">Add</div>
+      </div>
+      <div class="row" id="two">
+        <div class="col-md-2 border border-dark colunas" value = "14">2pm</div>
+        <div class="col-md-8 border border-dark colunas eventos" value = "14"></div>
+        <div class="col-md-2 border border-dark colunas botao">Add</div>
+      </div>
+      <div class="row" id="three">
+        <div class="col-md-2 border border-dark colunas" value = "15">3 pm</div>
+        <div class="col-md-8 border border-dark colunas eventos" value = "15"></div>
+        <div class="col-md-2 border border-dark colunas botao">Add</div>
+      </div>
+      <div class="row" id="four">
+        <div class="col-md-2 border border-dark colunas" value = "16">4 pm</div>
+        <div class="col-md-8 border border-dark colunas eventos" value = "16"></div>
+        <div class="col-md-2 border border-dark colunas botao">Add</div>
+      </div>
+      <div class="row" id="five">
+        <div class="col-md-2 border border-dark colunas" value = "17">5 pm</div>
+        <div class="col-md-8 border border-dark colunas eventos" value = "17"></div>
+        <div class="col-md-2 border border-dark colunas botao ">Add</div>
+      </div>
+        
+      </div>
+    </div>
+  </div>
+  <script>
+    var nine = $("#nine");
+    var m = moment();
+    var currentTime = parseInt(m.format("HH"));
+    var eventos = document.querySelector(".eventos");
+    var time = document.getElementById("time");
+    time.innerHTML = m.format("ddd DD/MM/YYYY");
+   
+    console.log(nine);
+
+    if(currentTime > eventos){
+      document.body.style.backgroundColor = "yellow";
+    }
+
+    eventos.addEventListener("click", function(){
+
+      
+      var input = document.createElement("input");
+      
+      eventos.append(input);
+    })
+  </script>
+
+</body>
+
+</html>
