@@ -1,0 +1,43 @@
+body {
+    background-image: url(https://cdn.pixabay.com/photo/2015/10/17/17/15/background-992858_960_720.png);
+  }
+  .container {
+      margin-bottom: 50px;
+  }
+  .colunas {
+    height: 50px;
+    background-color: rgb(3, 134, 3);
+    border-radius: 10px;
+  }
+
+  h1,
+  h4 {
+    text-align: center;
+  }
+
+  .botao {
+    border-radius: 10px;
+    background-color: rgb(103, 97, 143);
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  textarea {
+
+    border-radius: 10px;
+    font-weight: bolder;
+  }
+  .hour {
+    text-align: center;
+    font-weight: bolder;
+    background-color: rgb(202, 199, 199);
+    border-radius: 10px;
+    padding-top: 10px;
+  }
+  .add {
+      background-color: rgb(103, 97, 143);
+      border: rgb(103, 97, 143);
+      width: 100%;
+      
+     
+  }
