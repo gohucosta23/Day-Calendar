@@ -3,7 +3,7 @@ $(document).ready(function () {
     var m = moment();
     var dayTime = $("#time");
     dayTime.text(m.format("ddd DD/MM/YYYY"))
-    
+
     var currentTime = parseInt(m.format("HH"));
 
     var nine = $("#nine").val(9);
@@ -15,15 +15,16 @@ $(document).ready(function () {
     var three = $("#three").val(15);
     var four = $("#four").val(16);
     var five = $("#five").val(17);
-
+    var addButtons = [$("#buttonAddEvent1"), $("#buttonAddEvent2"), $("#buttonAddEvent3"), $("#buttonAddEvent4"), $("#buttonAddEvent5"), $("#buttonAddEvent6"), $("#buttonAddEvent7"), $("#buttonAddEvent8"), $("#buttonAddEvent9")]
     var columns = [nine, ten, eleven, twelve, one, two, three, four, five];
+    var columnTextArea = [$("#column0"), $("#column1"), $("#column2"), $("#column3"), $("#column4"), $("#column5"), $("#column6"), $("#column7"), $("#column8")]
     var events = [];
     var columnText = "";
     columnText = JSON.stringify($("form").children().val());
 
-    
-    
-   
+
+
+
     console.log(columns[0].parent().attr("id"))
     for (var i = 0; i < columns.length; i++) {
 
@@ -38,83 +39,35 @@ $(document).ready(function () {
         }
     }
 
-   
-       
-        nine.one("click", function () {
-        
 
-        $("#column1").append($("<textarea rows= 1 cols= 40 autofocus>"));
-        localStorage.setItem("column1", $("#column1"));
-      });
-        
     
-      ten.one("click", function () {
-  
-        $("#column2").append($("<textarea rows= 1 cols= 40 autofocus>"));
-        localStorage.setItem("column2", $("#column2"));
-      });
-      eleven.one("click", function () {
-  
-        $("#column3").append($("<textarea rows= 1 cols= 40 autofocus>"));
-        localStorage.setItem("column3", $("#column3"));
-      });
-      twelve.one("click", function () {
-  
-        $("#column4").append($("<textarea rows= 1 cols= 40 autofocus>"));
-  
-      });
-      one.one("click", function () {
-  
-        $("#column5").append($("<textarea rows= 1 cols= 40 autofocus>"));
-  
-      });
-      two.one("click", function () {
-  
-        $("#column6").append($("<textarea rows= 1 cols= 40 autofocus>"));
-  
-      });
-      three.one("click", function () {
-  
-        $("#column7").append($("<textarea rows= 1 cols= 40 autofocus>"));
-  
-      });
-      four.one("click", function () {
-  
-        $("#column8").append($("<textarea rows= 1 cols= 40 autofocus>"));
-  
-      });
-      five.one("click", function () {
-  
-        $("#column9").append($("<textarea rows= 1 cols= 40 autofocus>"));
-  
-      });
-         
-      
-
-    $("#buttonAddEvent1").on("click", function (event) {
 
 
-        event.preventDefault()
+   $("#buttonAddEvent1").on("click", function (event) {
+    var text = $(this).parent("div").parent("div").children("textarea").val();
+        console.log(text)
 
-        columnText = JSON.stringify($("textarea").val());
+    //     event.preventDefault()
+
+    //     columnText = JSON.stringify($("#text1").val());
         
-        console.log(columnText);
+    //     console.log(columnText);
         
-        var storedEvent = JSON.parse(localStorage.getItem("columnText"));
+    //     var storedEvent = JSON.parse(localStorage.getItem("columnText"));
 
-        if (storedEvent !== null) {
-            events = storedEvent;
-        }        
-            events.push(columnText);
-            localStorage.setItem("event", JSON.stringify(events));
-    })
+    //     if (storedEvent !== null) {
+    //         events = storedEvent;
+    //     }        
+    //         events.push(columnText);
+    //         localStorage.setItem("9 am", JSON.stringify(events));
+    // })
     
     $("#buttonAddEvent2").on("click", function (event) {
 
 
         event.preventDefault()
 
-        
+        columnText = JSON.stringify($("#text2").val());
         
         console.log(columnText);
         
@@ -124,14 +77,14 @@ $(document).ready(function () {
             events = storedEvent;
         }        
             events.push(columnText);
-            localStorage.setItem("event", JSON.stringify(events));
+            localStorage.setItem("10 am", JSON.stringify(events));
     })
     $("#buttonAddEvent3").on("click", function (event) {
 
 
         event.preventDefault()
 
-        columnText = JSON.stringify($("form").children().val());
+        columnText = JSON.stringify($("#text3").val());
         
         console.log(columnText);
         
@@ -141,14 +94,14 @@ $(document).ready(function () {
             events = storedEvent;
         }        
             events.push(columnText);
-            localStorage.setItem("event", JSON.stringify(events));
+            localStorage.setItem("11 am", JSON.stringify(events));
     })
     $("#buttonAddEvent4").on("click", function (event) {
 
 
         event.preventDefault()
 
-        columnText = JSON.stringify($("form").children().val());
+        columnText = JSON.stringify($("#text4").val());
         
         console.log(columnText);
         
@@ -158,14 +111,14 @@ $(document).ready(function () {
             events = storedEvent;
         }        
             events.push(columnText);
-            localStorage.setItem("event", JSON.stringify(events));
+            localStorage.setItem("12 pm", JSON.stringify(events));
     })
     $("#buttonAddEvent5").on("click", function (event) {
 
 
         event.preventDefault()
 
-        columnText = JSON.stringify($("form").children().val());
+        columnText = JSON.stringify($("#text5").val());
         
         console.log(columnText);
         
@@ -175,14 +128,14 @@ $(document).ready(function () {
             events = storedEvent;
         }        
             events.push(columnText);
-            localStorage.setItem("event", JSON.stringify(events));
+            localStorage.setItem("1 pm", JSON.stringify(events));
     })
     $("#buttonAddEvent6").on("click", function (event) {
 
 
         event.preventDefault()
 
-        columnText = JSON.stringify($("form").children().val());
+        columnText = JSON.stringify($("#text6").val());
         
         console.log(columnText);
         
@@ -192,14 +145,14 @@ $(document).ready(function () {
             events = storedEvent;
         }        
             events.push(columnText);
-            localStorage.setItem("event", JSON.stringify(events));
+            localStorage.setItem("2 pm", JSON.stringify(events));
     })
     $("#buttonAddEvent7").on("click", function (event) {
 
 
         event.preventDefault()
 
-        columnText = JSON.stringify($("form").children().val());
+        columnText = JSON.stringify($("#text7").val());
         
         console.log(columnText);
         
@@ -209,14 +162,14 @@ $(document).ready(function () {
             events = storedEvent;
         }        
             events.push(columnText);
-            localStorage.setItem("event", JSON.stringify(events));
+            localStorage.setItem("3 pm", JSON.stringify(events));
     })
     $("#buttonAddEvent8").on("click", function (event) {
 
 
         event.preventDefault()
 
-        columnText = JSON.stringify($("form").children().val());
+        columnText = JSON.stringify($("#text8").val());
         
         console.log(columnText);
         
@@ -226,14 +179,14 @@ $(document).ready(function () {
             events = storedEvent;
         }        
             events.push(columnText);
-            localStorage.setItem("event", JSON.stringify(events));
+            localStorage.setItem("4 pm", JSON.stringify(events));
     })
     $("#buttonAddEvent9").on("click", function (event) {
 
 
         event.preventDefault()
 
-        columnText = JSON.stringify($("form").children().val());
+        columnText = JSON.stringify($("#text8").val());
         
         console.log(columnText);
         
@@ -243,8 +196,11 @@ $(document).ready(function () {
             events = storedEvent;
         }        
             events.push(columnText);
-            localStorage.setItem("event", JSON.stringify(events));
+            localStorage.setItem("5 pm", JSON.stringify(events));
     })
+
+
+    // 
     // function loadLocalStorage() {
 
 
@@ -258,5 +214,5 @@ $(document).ready(function () {
 
     // }
     // loadLocalStorage();
-
-})
+   })
+   })
