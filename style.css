@@ -4,6 +4,9 @@ body {
   .container {
       margin-bottom: 50px;
   }
+  .hide{
+    display: none;
+  }
   .colunas {
     height: 50px;
     background-color: rgb(3, 134, 3);

@@ -1,8 +1,10 @@
-$(document).ready(function () {
+window.onload = function() {
+
+
 
     var m = moment();
     var dayTime = $("#time");
-    dayTime.text(m.format("ddd DD/MM/YYYY"))
+    dayTime.text(m.format("ddd MM/DD/YYYY"))
 
     var currentTime = parseInt(m.format("HH"));
 
@@ -14,18 +16,25 @@ $(document).ready(function () {
     var two = $("#two").val(14);
     var three = $("#three").val(15);
     var four = $("#four").val(16);
-    var five = $("#five").val(17);
-    var addButtons = [$("#buttonAddEvent1"), $("#buttonAddEvent2"), $("#buttonAddEvent3"), $("#buttonAddEvent4"), $("#buttonAddEvent5"), $("#buttonAddEvent6"), $("#buttonAddEvent7"), $("#buttonAddEvent8"), $("#buttonAddEvent9")]
+    var five = $("#five").val(17);    
     var columns = [nine, ten, eleven, twelve, one, two, three, four, five];
-    var columnTextArea = [$("#column0"), $("#column1"), $("#column2"), $("#column3"), $("#column4"), $("#column5"), $("#column6"), $("#column7"), $("#column8")]
-    var events = [];
-    var columnText = "";
-    columnText = JSON.stringify($("form").children().val());
+    var newText;
+    var nine = localStorage.getItem("nine");
+    
+    $("#nine").append(localStorage.getItem("Nine"));
+    $("#ten").append(localStorage.getItem("Ten"));
+    $("#eleven").append(localStorage.getItem("Eleven"));
+    $("#twelve").append(localStorage.getItem("Twelve"));
+    $("#one").append(localStorage.getItem("One"));
+    $("#two").append(localStorage.getItem("Two"));
+    $("#three").append(localStorage.getItem("Three"));
+    $("#four").append(localStorage.getItem("Four"));
+    $("#five").append(localStorage.getItem("Five"));
+    
 
 
 
-
-    console.log(columns[0].parent().attr("id"))
+    
     for (var i = 0; i < columns.length; i++) {
 
         if (currentTime > columns[i].val()) {
@@ -39,180 +48,108 @@ $(document).ready(function () {
         }
     }
 
-
-    
-
-
-   $("#buttonAddEvent1").on("click", function (event) {
-    var text = $(this).parent("div").parent("div").children("textarea").val();
-        console.log(text)
-
-    //     event.preventDefault()
-
-    //     columnText = JSON.stringify($("#text1").val());
+    // $(document).on("click", ".colunas", function(){
+    //     var newTextArea = $("<textarea rows = '1' autofocus>");
+    //     $(this).append(newTextArea)
         
-    //     console.log(columnText);
-        
-    //     var storedEvent = JSON.parse(localStorage.getItem("columnText"));
-
-    //     if (storedEvent !== null) {
-    //         events = storedEvent;
-    //     }        
-    //         events.push(columnText);
-    //         localStorage.setItem("9 am", JSON.stringify(events));
-    // })
-    
-    $("#buttonAddEvent2").on("click", function (event) {
-
-
-        event.preventDefault()
-
-        columnText = JSON.stringify($("#text2").val());
-        
-        console.log(columnText);
-        
-        var storedEvent = JSON.parse(localStorage.getItem("columnText"));
-
-        if (storedEvent !== null) {
-            events = storedEvent;
-        }        
-            events.push(columnText);
-            localStorage.setItem("10 am", JSON.stringify(events));
+    // })  
+    $("#nine").one("click",function(){
+        $(this).append("<textarea>");
+        $("textarea").attr("id","textOne");
+    })  
+    $("#ten").one("click",function(){
+        $(this).append("<textarea>");
+        $("textarea").attr("id","textTwo");
+    }) 
+    $("#eleven").one("click",function(){
+        $(this).append("<textarea>");
+        $("textarea").attr("id","textThree");
+    }) 
+    $("#twelve").one("click",function(){
+        $(this).append("<textarea>");
+        $("textarea").attr("id","textFour");
+    }) 
+    $("#one").one("click",function(){
+        $(this).append("<textarea>");
+        $("textarea").attr("id","textFive");
+    }) 
+    $("#two").one("click",function(){
+        $(this).append("<textarea>");
+        $("textarea").attr("id","textSix");
+    }) 
+    $("#three").one("click",function(){
+        $(this).append("<textarea>");
+        $("textarea").attr("id","textSeven");
     })
-    $("#buttonAddEvent3").on("click", function (event) {
-
-
-        event.preventDefault()
-
-        columnText = JSON.stringify($("#text3").val());
-        
-        console.log(columnText);
-        
-        var storedEvent = JSON.parse(localStorage.getItem("columnText"));
-
-        if (storedEvent !== null) {
-            events = storedEvent;
-        }        
-            events.push(columnText);
-            localStorage.setItem("11 am", JSON.stringify(events));
+    $("#four").one("click",function(){
+        $(this).append("<textarea>");
+        $("textarea").attr("id","textEight");
     })
-    $("#buttonAddEvent4").on("click", function (event) {
+    $("#five").one("click",function(){
+        $(this).append("<textarea>");
+        $("textarea").attr("id","textNine");
+    })           
 
+   $("#buttonAddEvent1").on("click", function () {
 
-        event.preventDefault()
+    var textOne = $("#textOne").val();  
+    console.log(textOne)    
+    localStorage.setItem("Nine", textOne);    
+   });
+   
+    $("#buttonAddEvent2").on("click", function () {
 
-        columnText = JSON.stringify($("#text4").val());
-        
-        console.log(columnText);
-        
-        var storedEvent = JSON.parse(localStorage.getItem("columnText"));
-
-        if (storedEvent !== null) {
-            events = storedEvent;
-        }        
-            events.push(columnText);
-            localStorage.setItem("12 pm", JSON.stringify(events));
+    var textTwo = $("#textTwo").val();      
+    localStorage.setItem("Ten", textTwo);  
     })
-    $("#buttonAddEvent5").on("click", function (event) {
-
-
-        event.preventDefault()
-
-        columnText = JSON.stringify($("#text5").val());
+       
         
-        console.log(columnText);
-        
-        var storedEvent = JSON.parse(localStorage.getItem("columnText"));
+    $("#buttonAddEvent3").on("click", function () {
 
-        if (storedEvent !== null) {
-            events = storedEvent;
-        }        
-            events.push(columnText);
-            localStorage.setItem("1 pm", JSON.stringify(events));
+    var textThree = $("#textThree").val(); 
+    localStorage.setItem("Eleven", textThree);  
+       
     })
-    $("#buttonAddEvent6").on("click", function (event) {
+    $("#buttonAddEvent4").on("click", function () {
 
-
-        event.preventDefault()
-
-        columnText = JSON.stringify($("#text6").val());
-        
-        console.log(columnText);
-        
-        var storedEvent = JSON.parse(localStorage.getItem("columnText"));
-
-        if (storedEvent !== null) {
-            events = storedEvent;
-        }        
-            events.push(columnText);
-            localStorage.setItem("2 pm", JSON.stringify(events));
+        var textFour = $("#textFour").val();      
+        localStorage.setItem("Twelve", textFour);    
+       
     })
-    $("#buttonAddEvent7").on("click", function (event) {
+    $("#buttonAddEvent5").on("click", function () {
 
-
-        event.preventDefault()
-
-        columnText = JSON.stringify($("#text7").val());
+        var textFive = $("#textFive").val();      
+        localStorage.setItem("One", textFive);   
         
-        console.log(columnText);
-        
-        var storedEvent = JSON.parse(localStorage.getItem("columnText"));
-
-        if (storedEvent !== null) {
-            events = storedEvent;
-        }        
-            events.push(columnText);
-            localStorage.setItem("3 pm", JSON.stringify(events));
     })
-    $("#buttonAddEvent8").on("click", function (event) {
+    $("#buttonAddEvent6").on("click", function () {
 
 
-        event.preventDefault()
-
-        columnText = JSON.stringify($("#text8").val());
+        var textSix = $("#textSix").val();      
+        localStorage.setItem("Two", textSix);   
         
-        console.log(columnText);
-        
-        var storedEvent = JSON.parse(localStorage.getItem("columnText"));
-
-        if (storedEvent !== null) {
-            events = storedEvent;
-        }        
-            events.push(columnText);
-            localStorage.setItem("4 pm", JSON.stringify(events));
     })
-    $("#buttonAddEvent9").on("click", function (event) {
+    $("#buttonAddEvent7").on("click", function () {
 
 
-        event.preventDefault()
-
-        columnText = JSON.stringify($("#text8").val());
+        var textSeven = $("#textSeven").val();      
+        localStorage.setItem("Three", textSeven);  
         
-        console.log(columnText);
-        
-        var storedEvent = JSON.parse(localStorage.getItem("columnText"));
+    })
+    $("#buttonAddEvent8").on("click", function () {
 
-        if (storedEvent !== null) {
-            events = storedEvent;
-        }        
-            events.push(columnText);
-            localStorage.setItem("5 pm", JSON.stringify(events));
+
+        var textEight = $("#textEight").val();      
+        localStorage.setItem("Four", textEight);  
+        
+    })
+    $("#buttonAddEvent9").on("click", function () {
+
+
+        var textFive = $("#textFive").val();      
+        localStorage.setItem("Five", textFive);    
+        
     })
 
 
-    // 
-    // function loadLocalStorage() {
-
-
-
-    //     var storageData = JSON.parse(localStorage.getItem("events"));
-    //     console.log(storageData)
-    //     var textareas = $("#column1");
-    //     textareas.text(storageData[0]);
-    //     /* step 1 determine where this data is going to go (maybe change the data type)
-    //        EX : $("TEXTAREA"){TARGET CORRECT CORRECT JQUERY ELEMENT}*/
-
-    // }
-    // loadLocalStorage();
-   })
-   })
+}
